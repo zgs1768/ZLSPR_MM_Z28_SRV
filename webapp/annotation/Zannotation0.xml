@@ -1,13 +1,13 @@
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
-	<edmx:Reference Uri="/sap/opu/odata/sap/ZLSPR_MM_Z28_SRV/$metadata">
-        <edmx:Include Alias="Metadata" Namespace="ZLSPR_MM_Z28_SRV"/>
+	<edmx:Reference Uri="/sap/opu/odata/sap/ZODATA_MM_0001_SRV/$metadata">
+        <edmx:Include Alias="Metadata" Namespace="ZODATA_MM_0001_SRV"/>
 	</edmx:Reference>
     <edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
 		Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml?api=v2">
 		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
 	</edmx:Reference>
      <edmx:DataServices>
-        <Schema Namespace="listodataproject3.annotation.Zannotation0.ZLSPR_MM_Z28_SRV"  
+        <Schema Namespace="listodataproject3.annotation.Zannotation0.ZODATA_MM_0001_SRV"  
          xmlns="http://docs.oasis-open.org/odata/ns/edm">
          <Annotations Target="Metadata.PhPreview_Level/Iblnr"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">

@@ -23,7 +23,7 @@ sap.ui.define(
 
 
 
-    return Controller.extend('gus.zlsprmmz28srv.controller.Detail', {
+    return Controller.extend('gus.zodatamm0001srv.controller.Detail', {
 
       onInit() {
         const oRouter = this.getOwnerComponent().getRouter()

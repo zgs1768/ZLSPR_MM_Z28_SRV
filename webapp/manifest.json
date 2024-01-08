@@ -1,7 +1,7 @@
 {
   "_version": "1.58.0",
   "sap.app": {
-    "id": "gus.zlsprmmz28srv",
+    "id": "gus.zodatamm0001srv",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZLSPR_MM_Z28_SRV/",
+        "uri": "/sap/opu/odata/sap/ZODATA_MM_0001_SRV/",
         "type": "OData",
         "settings": {
           "annotations": ["Zannotation0"],
@@ -73,7 +73,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "gus.zlsprmmz28srv.i18n.i18n"
+          "bundleName": "gus.zodatamm0001srv.i18n.i18n"
         }
       },
       "": {
@@ -94,7 +94,7 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "gus.zlsprmmz28srv.view",
+        "viewPath": "gus.zodatamm0001srv.view",
         "controlAggregation": "pages",
         "controlId": "app",
         "clearControlAggregation": false
@@ -128,7 +128,7 @@
       }
     },
     "rootView": {
-      "viewName": "gus.zlsprmmz28srv.view.App",
+      "viewName": "gus.zodatamm0001srv.view.App",
       "type": "XML",
       "async": true,
       "id": "App"

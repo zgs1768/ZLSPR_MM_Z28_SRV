@@ -7,7 +7,7 @@ sap.ui.define([
 
 	Opa5.extendConfig({
 		arrangements: new Startup(),
-		viewNamespace: "gus.zlsprmmz28srv.view.",
+		viewNamespace: "gus.zodatamm0001srv.view.",
 		autoWait: true
 	});
 });

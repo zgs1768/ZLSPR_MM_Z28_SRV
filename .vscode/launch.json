@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Start zlspr_mm_z28_srv",
+      "name": "Start zodata_mm_0001_srv",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npx",
@@ -16,7 +16,7 @@
       ],
       "args": [
         "--open",
-        "test/flpSandbox.html#guszlsprmmz28srv-display"
+        "test/flpSandbox.html#guszodatamm0001srv-display"
       ],
       "console": "internalConsole",
       "internalConsoleOptions": "openOnSessionStart",
@@ -25,11 +25,11 @@
       "env": {
         "DEBUG": "--inspect",
         "FIORI_TOOLS_URL_PARAMS": "sap-client=800&sap-ui-xx-viewCache=false",
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/zlspr_mm_z28_srv\"}"
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/zodata_mm_0001_srv\"}"
       }
     },
     {
-      "name": "Start zlspr_mm_z28_srv Mock",
+      "name": "Start zodata_mm_0001_srv Mock",
       "type": "node",
       "request": "launch",
       "cwd": "${workspaceFolder}",
@@ -45,7 +45,7 @@
         "--config",
         "./ui5-mock.yaml",
         "--open",
-        "test/flpSandbox.html#guszlsprmmz28srv-display"
+        "test/flpSandbox.html#guszodatamm0001srv-display"
       ],
       "console": "internalConsole",
       "internalConsoleOptions": "openOnSessionStart",
@@ -53,11 +53,11 @@
       "port": 9229,
       "env": {
         "FIORI_TOOLS_URL_PARAMS": "sap-client=800&sap-ui-xx-viewCache=false",
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/zlspr_mm_z28_srv\"}"
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/zodata_mm_0001_srv\"}"
       }
     },
     {
-      "name": "Start zlspr_mm_z28_srv Local",
+      "name": "Start zodata_mm_0001_srv Local",
       "type": "node",
       "request": "launch",
       "cwd": "${workspaceFolder}",
@@ -73,7 +73,7 @@
         "--config",
         "./ui5-local.yaml",
         "--open",
-        "test/flpSandbox.html#guszlsprmmz28srv-display"
+        "test/flpSandbox.html#guszodatamm0001srv-display"
       ],
       "console": "internalConsole",
       "internalConsoleOptions": "openOnSessionStart",
@@ -81,7 +81,7 @@
       "port": 9229,
       "env": {
         "FIORI_TOOLS_URL_PARAMS": "sap-client=800&sap-ui-xx-viewCache=false",
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/zlspr_mm_z28_srv\"}"
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/zodata_mm_0001_srv\"}"
       }
     }
   ]

@@ -1,6 +1,6 @@
 <mvc:View
     xmlns:richtexteditor="sap.ui.richtexteditor"
-    controllerName="gus.zlsprmmz28srv.controller.Detail"
+    controllerName="gus.zodatamm0001srv.controller.Detail"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"

@@ -40,7 +40,7 @@ sap.ui.define([
 								"tileType": "sap.ushell.ui.tile.StaticTile",
 								"properties": {
 									"title": "棚卸検数入力",
-									"targetURL": "#guszlsprmmz28srv-display"
+									"targetURL": "#guszodatamm0001srv-display"
 								}
 							}]
 						}]
@@ -51,8 +51,8 @@ sap.ui.define([
 				"adapter": {
 					"config": {
 						"inbounds": {
-							"guszlsprmmz28srv-display": {
-								"semanticObject": "guszlsprmmz28srv",
+							"guszodatamm0001srv-display": {
+								"semanticObject": "guszodatamm0001srv",
 								"action": "display",
 								"description": "棚卸検数入力",
 								"title": "棚卸検数入力",
@@ -61,8 +61,8 @@ sap.ui.define([
 								},
 								"resolutionResult": {
 									"applicationType": "SAPUI5",
-									"additionalInformation": "SAPUI5.Component=gus.zlsprmmz28srv",
-									"url": sap.ui.require.toUrl("gus/zlsprmmz28srv")
+									"additionalInformation": "SAPUI5.Component=gus.zodatamm0001srv",
+									"url": sap.ui.require.toUrl("gus/zodatamm0001srv")
 								}
 							}
 						}

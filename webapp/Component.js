@@ -5,12 +5,12 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "gus/zlsprmmz28srv/model/models"
+        "gus/zodatamm0001srv/model/models"
     ],
     function (UIComponent, Device, models) {
         "use strict";
 
-        return UIComponent.extend("gus.zlsprmmz28srv.Component", {
+        return UIComponent.extend("gus.zodatamm0001srv.Component", {
             metadata: {
                 manifest: "json"
             },

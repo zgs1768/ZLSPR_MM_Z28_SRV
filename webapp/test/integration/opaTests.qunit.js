@@ -1,6 +1,6 @@
 /* global QUnit */
 
-sap.ui.require(["gus/zlsprmmz28srv/test/integration/AllJourneys"
+sap.ui.require(["gus/zodatamm0001srv/test/integration/AllJourneys"
 ], function () {
 	QUnit.config.autostart = false;
 	QUnit.start();

@@ -1,7 +1,7 @@
 /*global QUnit*/
 
 sap.ui.define([
-	"gus/zlspr_mm_z28_srv/controller/InvoiceList.controller"
+	"gus/zodata_mm_0001_srv/controller/InvoiceList.controller"
 ], function (Controller) {
 	"use strict";
 

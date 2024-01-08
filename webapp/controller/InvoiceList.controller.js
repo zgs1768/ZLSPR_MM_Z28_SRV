@@ -9,7 +9,7 @@ sap.ui.define([
     function (Controller, ODataModel, MessageBox,) {
         "use strict";
 
-        return Controller.extend("gus.zlsprmmz28srv.controller.InvoiceList", {
+        return Controller.extend("gus.zodatamm0001srv.controller.InvoiceList", {
             onInit: function () {
                 //设置初始工厂,登录时获取
                 this.byId("mandatoryFilterWerks").setProperty("low", 'H001')

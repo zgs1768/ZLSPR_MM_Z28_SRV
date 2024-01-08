@@ -7,8 +7,8 @@
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Template Used**<br>simple|
 |**Service Type**<br>SAP System (ABAP On Premise)|
-|**Service URL**<br>http://btptest:9999/sap/opu/odata/sap/ZLSPR_MM_Z28_SRV
-|**Module Name**<br>zlspr_mm_z28_srv|
+|**Service URL**<br>http://btptest:9999/sap/opu/odata/sap/ZODATA_MM_0001_SRV
+|**Module Name**<br>zodata_mm_0001_srv|
 |**Application Title**<br>棚卸検数入力|
 |**Namespace**<br>gus|
 |**UI5 Theme**<br>sap_horizon|
@@ -17,7 +17,7 @@
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>False|
 
-## zlspr_mm_z28_srv
+## zodata_mm_0001_srv
 
 棚卸検数入力
 

@@ -2,7 +2,7 @@
 
 specVersion: "3.1"
 metadata:
-  name: gus.zlsprmmz28srv
+  name: gus.zodatamm0001srv
 type: application
 builder:
   resources:
@@ -17,9 +17,9 @@ builder:
           destination: BTPTest
           url: http://btptest:9999
         app:
-          name: ZLSPR_MM_Z28_R
-          description: ZLSPR_MM_Z28_lauch app
-          package: $tmp
+          name: ZODATA_MM_0001
+          description: ZODATA_MM_0001_lauch app
+          package: $TMP
           transport: ""
         exclude:
           - /test/

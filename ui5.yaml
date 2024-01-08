@@ -2,7 +2,7 @@
 
 specVersion: "3.1"
 metadata:
-  name: gus.zlsprmmz28srv
+  name: gus.zodatamm0001srv
 type: application
 server:
   customMiddleware:
@@ -29,5 +29,5 @@ server:
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:
-        component: gus.zlsprmmz28srv
+        component: gus.zodatamm0001srv
         ui5Theme: sap_horizon

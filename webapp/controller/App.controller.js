@@ -5,7 +5,7 @@ sap.ui.define(
     function(BaseController) {
       "use strict";
   
-      return BaseController.extend("gus.zlsprmmz28srv.controller.App", {
+      return BaseController.extend("gus.zodatamm0001srv.controller.App", {
         onInit: function() {
         }
       });

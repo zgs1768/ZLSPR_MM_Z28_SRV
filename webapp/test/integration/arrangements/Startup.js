@@ -14,7 +14,7 @@ sap.ui.define([
 			// start the app UI component
 			this.iStartMyUIComponent({
 				componentConfig: {
-					name: "gus.zlsprmmz28srv",
+					name: "gus.zodatamm0001srv",
 					async: true
 				},
 				hash: oOptions.hash,
