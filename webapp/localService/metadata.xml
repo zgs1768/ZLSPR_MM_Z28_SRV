@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZLSPR_MM_Z28_SRV" xml:lang="ja" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="PhInven_HEADER" Abstract="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Iblnr"/>
+                    <PropertyRef Name="Gjahr"/>
+                </Key>
+                <Property Name="Dstat" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="調整ステータス" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Iblnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="実地棚卸伝票" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Gjahr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="会計年度" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Werks" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="プラント" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Lgort" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="保管場所" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Gidat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="予定検数日付" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Zldat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="検数日付" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Zstat" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="検数ステータス" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="PhPreview_Level" BaseType="ZLSPR_MM_Z28_SRV.PhInven_HEADER" sap:content-version="1">
+                <Property Name="BERID" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="MRP エリア" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="REMARK" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="注釈" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="To_Item" Relationship="ZLSPR_MM_Z28_SRV.To_Item" FromRole="FromRole_To_Item" ToRole="ToRole_To_Item"/>
+            </EntityType>
+            <EntityType Name="PhInven_ITEM" Abstract="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Iblnr"/>
+                    <PropertyRef Name="Gjahr"/>
+                </Key>
+                <Property Name="Iblnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="実地棚卸伝票" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Gjahr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="会計年度" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Zeili" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="明細" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Matnr" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="品目" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Werks" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="プラント" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Lgort" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="保管場所" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Bstar" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="在庫タイプ" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Buchm" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="Meins" sap:label="帳簿数量" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Menge" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="Meins" sap:label="数量" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Meins" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="基本単位" sap:creatable="false" sap:updatable="false" sap:semantics="unit-of-measure"/>
+            </EntityType>
+            <EntityType Name="PhDetail_Level" BaseType="ZLSPR_MM_Z28_SRV.PhInven_ITEM" sap:is-thing-type="true" sap:content-version="1">
+                <Property Name="LGPBE" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="棚番" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="Matphy_H_Create" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PLANT"/>
+                </Key>
+                <Property Name="PLANT" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="プラント" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="STGE_LOC" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="保管場所" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DOC_DATE" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="伝票日付" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PLAN_DATE" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="予定検数日付" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="To_Mat_Item" Relationship="ZLSPR_MM_Z28_SRV.To_Mat_Item" FromRole="FromRole_To_Mat_Item" ToRole="ToRole_To_Mat_Item"/>
+            </EntityType>
+            <EntityType Name="Matphy_I" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PLANT"/>
+                </Key>
+                <Property Name="PLANT" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="プラント" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="STOCK_TYPE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <ComplexType Name="TComplex_Result">
+                <Property Name="Result" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <Association Name="To_Item" sap:content-version="1">
+                <End Type="ZLSPR_MM_Z28_SRV.PhPreview_Level" Multiplicity="1" Role="FromRole_To_Item"/>
+                <End Type="ZLSPR_MM_Z28_SRV.PhDetail_Level" Multiplicity="*" Role="ToRole_To_Item"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_To_Item">
+                        <PropertyRef Name="Gjahr"/>
+                        <PropertyRef Name="Iblnr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_To_Item">
+                        <PropertyRef Name="Gjahr"/>
+                        <PropertyRef Name="Iblnr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="To_Mat_Item" sap:content-version="1">
+                <End Type="ZLSPR_MM_Z28_SRV.Matphy_H_Create" Multiplicity="1" Role="FromRole_To_Mat_Item"/>
+                <End Type="ZLSPR_MM_Z28_SRV.Matphy_I" Multiplicity="*" Role="ToRole_To_Mat_Item"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_To_Mat_Item">
+                        <PropertyRef Name="PLANT"/>
+                    </Principal>
+                    <Dependent Role="ToRole_To_Mat_Item">
+                        <PropertyRef Name="PLANT"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZLSPR_MM_Z28_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="PhPreview_LevelSet" EntityType="ZLSPR_MM_Z28_SRV.PhPreview_Level" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:addressable="false" sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="PhInven_ITEMCollection" EntityType="ZLSPR_MM_Z28_SRV.PhInven_ITEM" sap:content-version="1"/>
+                <EntitySet Name="PhDetail_LevelSet" EntityType="ZLSPR_MM_Z28_SRV.PhDetail_Level" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:addressable="false" sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="Matphy_H_CreateSet" EntityType="ZLSPR_MM_Z28_SRV.Matphy_H_Create" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="Matphy_ISet" EntityType="ZLSPR_MM_Z28_SRV.Matphy_I" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="PhInven_HEADERCollection" EntityType="ZLSPR_MM_Z28_SRV.PhInven_HEADER" sap:content-version="1"/>
+                <AssociationSet Name="To_ItemSet" Association="ZLSPR_MM_Z28_SRV.To_Item" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PhPreview_LevelSet" Role="FromRole_To_Item"/>
+                    <End EntitySet="PhDetail_LevelSet" Role="ToRole_To_Item"/>
+                </AssociationSet>
+                <AssociationSet Name="To_Mat_Item_AssocSet" Association="ZLSPR_MM_Z28_SRV.To_Mat_Item" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Matphy_H_CreateSet" Role="FromRole_To_Mat_Item"/>
+                    <End EntitySet="Matphy_ISet" Role="ToRole_To_Mat_Item"/>
+                </AssociationSet>
+                <FunctionImport Name="Matnr_Check" ReturnType="ZLSPR_MM_Z28_SRV.TComplex_Result" m:HttpMethod="GET">
+                    <Parameter Name="Matnr" Type="Edm.String" Mode="In" MaxLength="40" sap:label="品目"/>
+                </FunctionImport>
+            </EntityContainer>
+            <atom:link rel="self" href="http://btptest:9999/sap/opu/odata/sap/ZLSPR_MM_Z28_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://btptest:9999/sap/opu/odata/sap/ZLSPR_MM_Z28_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

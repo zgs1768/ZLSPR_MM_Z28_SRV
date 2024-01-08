@@ -1,0 +1,286 @@
+<mvc:View
+    xmlns:richtexteditor="sap.ui.richtexteditor"
+    controllerName="gus.zlsprmmz28srv.controller.Detail"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:table="sap.ui.table"
+    xmlns:ndc="sap.ndc"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+>
+    <f:DynamicPage
+        id="dynamicPageId"
+        preserveHeaderStateOnScroll="true"
+        headerExpanded="{/headerExpanded}"
+        showFooter="true"
+    >
+        <!-- DynamicPage Title -->
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="棚卸検数入力ラベル読み取り（検数入力）" />
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+        <!-- DynamicPage Header -->
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <FlexBox
+                    alignItems="Start"
+                    justifyContent="SpaceBetween"
+                >
+                    <items>
+                        <Panel backgroundDesign="Transparent">
+                            <content>
+                                <layout:HorizontalLayout allowWrapping="true">
+                                    <layout:VerticalLayout
+                                        class="sapUiMediumMarginEnd"
+                                    >
+                                        <ObjectAttribute
+                                            id="headtext1"
+                                            title="{i18n>IBLNR}"
+                                        />
+                                        <ObjectAttribute
+                                            id="headtext2"
+                                            title="{i18n>LGORT}"
+                                            
+                                        />
+                                        <ObjectAttribute
+                                            id="headtext3"
+                                            title="{i18n>GIDAT}"
+                                        />
+                                    </layout:VerticalLayout>
+                                </layout:HorizontalLayout>
+                            </content>
+                        </Panel>
+                    </items>
+                </FlexBox>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <!-- <smartTable:SmartTable
+                id="DatailST"
+                entitySet="PhDetail_LevelSet"
+                tableType="ResponsiveTable"
+                enableExport="false"
+                header="棚卸明細"
+                enableAutoBinding="true"
+                demandPopin="true"
+                persistencyKey="SmartTableAnalytical_Explored"
+                class="sapUiResponsiveContentPadding"
+                enableAutoColumnWidth="true"
+                initiallyVisibleFields="Zeili,LGPBE,Matnr,Bstar,Buchm,Meins"
+                beforeRebindTable="onBeforeRebindTable"
+                initialise="onInitialise"
+            >
+                <Table
+                    id="DatailT"
+                    growing="true"
+                    growingThreshold="15"
+                >
+                    <columns>
+                        <Column id="DatailTC">
+                            <customData>
+                                <core:CustomData
+                                    key="p13nData"
+                                    value='\{"columnKey": "cMenge", "columnIndex":"5"}'
+                                />
+                            </customData>
+                            <Text
+                                id="checkMenge"
+                                text="数量"
+                            />
+                        </Column>
+                        <Column id="DatailTC2">
+                            <customData>
+                                <core:CustomData
+                                    key="p13nData"
+                                    value='\{"columnKey": "Menge", "autoColumnWidth": \{ "visibleProperty": "Menge" }, "columnIndex": 7, "leadingProperty": "Menge", "sortProperty": "Menge", "additionalProperty": "Menge", "additionalSortProperty": "Menge", "width": "360px"}'
+                                />
+                            </customData>
+                            <Text
+                                id="checkedMenge"
+                                text="検数済数量"
+                            />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem id="DatailTColumnListItem">
+                            <cells>
+                                <Input
+                                    id="idInput"
+                                    value="{cMenge}"
+                                />
+                            </cells>
+                            <cells>
+                                <Text
+                                    id="textMenge"
+                                    text="{Menge}"
+                                />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </smartTable:SmartTable> -->
+
+            <smartTable:SmartTable
+                id="DatailST"
+                entitySet="PhDetail_LevelSet"
+                tableType="ResponsiveTable"
+                enableExport="false"
+                useExportToExcel="false"
+                header="棚卸明細"
+                showRowCount="true"
+                enableAutoBinding="false"
+                demandPopin="true"
+                persistencyKey="SmartTableAnalytical_Explored"
+                class="sapUiResponsiveContentPadding"
+                enableAutoColumnWidth="true"
+                initiallyVisibleFields=""
+                beforeRebindTable="onBeforeRebindTable"
+                initialise="onInitialise"
+            >
+                <Table
+                    id="DatailT"
+                    growing="true"
+                    growingThreshold="15"
+                    items="{detailModel>/Detail}"
+                >
+                    <columns>
+                        <Column
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                        >
+                            <Text text="明細" />
+                        </Column>
+                        <Column
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                        >
+                            <Text text="棚番" />
+                        </Column>
+                        <Column
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                        >
+                            <Text text="品目" />
+                        </Column>
+                        <Column
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                        >
+                            <Text text="在庫タイプ" />
+                        </Column>
+                        <Column
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                        >
+                            <Text text="帳簿数量" />
+                        </Column>
+                        <Column id="DatailTC">
+                            <customData>
+                                <core:CustomData
+                                    key="p13nData"
+                                    value='\{"columnKey": "cMenge", "columnIndex":"5"}'
+                                />
+                            </customData>
+                            <Text
+                                id="checkMenge"
+                                text="数量"
+                            />
+                        </Column>
+                        <Column
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                        >
+                            <Text text="単位" />
+                        </Column>
+                        <Column
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                        >
+                            <Text text="検数済み数量" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem id="DatailTColumnListItem">
+                            <cells>
+                                <Text text="{detailModel>Zeili}" />
+                                <Text text="{detailModel>LGPBE}" />
+                                <Text text="{detailModel>Matnr}" />
+                                <Text text="{detailModel>Bstar}" />
+                                <Text
+                                    text="{path: 'detailModel>Buchm',
+										   formatter: '.formatMenge'}"
+                                />
+                                <Input
+                                    id="idInputcMenge"
+                                    type="Number"
+                                    value="{detailModel>cMenge}"
+                                />
+                                <Text text="{detailModel>Meins}" />
+                                <Text
+                                    text="{path: 'detailModel>Menge',
+										   formatter: '.formatMenge'}"
+                                />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </smartTable:SmartTable>
+        </f:content>
+
+        <f:footer>
+            <OverflowToolbar>
+                <Button
+                    icon="sap-icon://message-popup"
+                    text="{/messagesLength}"
+                    type="Emphasized"
+                    press="onMessageButtonPress"
+                    visible="{= !!${/messagesLength}}"
+                />
+                <ToolbarSpacer />
+
+                <Button
+                    icon="sap-icon://qr-code"
+                    text="{i18n>handy}"
+                    press=".onHandyPress"
+                    ariaDescribedBy="handyButtonDescription genericButtonDescription"
+                    enabled="true"
+                >
+                    <layoutData>
+                        <FlexItemData growFactor="1" />
+                    </layoutData>
+                </Button>
+
+                <Button
+                    id="scan"
+                    type="Emphasized"
+                    text="{i18n>scan}"
+                    press=".onscanPress"
+                    enabled="false"
+                />
+                <ndc:BarcodeScannerButton
+                    id="button"
+                    scanSuccess="onScanSuccess"
+                    scanFail="onScanError"
+                />
+
+                <Button
+                    id="confirm"
+                    text="{i18n>confirm}"
+                    press=".onconfirmPress"
+                />
+                <Button
+                    id="return"
+                    text="{i18n>return}"
+                    press=".onreturnPress"
+                    ariaHasPopup="Dialog"
+                />
+            </OverflowToolbar>
+        </f:footer>
+    </f:DynamicPage>
+</mvc:View>

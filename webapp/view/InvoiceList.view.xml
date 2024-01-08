@@ -1,0 +1,145 @@
+<mvc:View
+    controllerName="gus.zlsprmmz28srv.controller.InvoiceList"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+>
+    <f:DynamicPage
+        id="seachdynamicPageId"
+        preserveHeaderStateOnScroll="true"
+        headerExpanded="{/headerExpanded}"
+    >
+        <!-- DynamicPage Title -->
+        <f:title>
+            <f:DynamicPageTitle id="dpt">
+                <f:heading>
+                    <Title
+                        id="fptt"
+                        text="棚卸検数入力ラベル読み取り（伝票選択）"
+                    />
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+        <!-- DynamicPage Header -->
+        <f:header>
+            <f:DynamicPageHeader id="dpil">
+                <FlexBox
+                    id="fbil"
+                    alignItems="Start"
+                    justifyContent="SpaceBetween"
+                >
+                    <items>
+                        <Panel
+                            id="dphp"
+                            backgroundDesign="Transparent"
+                            class="sapUiNoContentPadding"
+                        >
+                            <content>
+                                <smartFilterBar:SmartFilterBar
+                                    id="ismartFilterBar"
+                                    entitySet="PhPreview_LevelSet"
+                                    useToolbar="false"
+                                    showFilterConfiguration="false"
+                                >
+                                    <smartFilterBar:controlConfiguration>
+                                        <smartFilterBar:ControlConfiguration
+                                            id="filter1"
+                                            key="Iblnr"
+                                            visibleInAdvancedArea="true"
+                                            label="伝票番号"
+                                            index="0"
+                                        />
+                                        <smartFilterBar:ControlConfiguration
+                                            mandatory="mandatory"
+                                            id="filter2"
+                                            key="Werks"
+                                            visibleInAdvancedArea="true"
+                                            index="1"
+                                        >
+                                            <smartFilterBar:defaultFilterValues>
+                                                <smartFilterBar:SelectOption
+                                                    id="mandatoryFilterWerks"
+                                                />
+                                            </smartFilterBar:defaultFilterValues>
+                                        </smartFilterBar:ControlConfiguration>
+
+                                        <smartFilterBar:ControlConfiguration
+                                            id="filter3"
+                                            key="BERID"
+                                            visibleInAdvancedArea="true"
+                                            label="MRPエリア"
+                                            index="2"
+                                        />
+                                        <smartFilterBar:ControlConfiguration
+                                            id="filter4"
+                                            key="REMARK"
+                                            visibleInAdvancedArea="true"
+                                            label="課所コード（CEコード）"
+                                            index="3"
+                                        />
+                                        <smartFilterBar:ControlConfiguration
+                                            id="filter5"
+                                            key="Zstat"
+                                            visibleInAdvancedArea="true"
+                                            controlType="dropDownList"
+                                            index="4"
+                                        />
+                                    </smartFilterBar:controlConfiguration>
+                                </smartFilterBar:SmartFilterBar>
+                            </content>
+                        </Panel>
+                    </items>
+                </FlexBox>
+            </f:DynamicPageHeader>
+        </f:header>
+
+        <f:content>
+            <smartTable:SmartTable
+                id="STinvoiceList"
+                entitySet="PhPreview_LevelSet"
+                smartFilterId="ismartFilterBar"
+                tableType="ResponsiveTable"
+                enableExport="false"
+                useExportToExcel="false"
+                useVariantManagement="false"
+                useTablePersonalisation="true"
+                enableAutoBinding="true"
+                demandPopin="true"
+                class="sapUiResponsiveContentPadding"
+                enableAutoColumnWidth="false"
+                editTogglable="false"
+                initiallyVisibleFields="Iblnr,Zstat,Lgort,Gidat,Zldat"
+                beforeRebindTable="onBeforeRebindTable"
+                showTablePersonalisation="false"
+            >
+                <Table id="innerUi5Table">
+                    <items>
+                        <ColumnListItem
+                            id="ListItem"
+                            type="Navigation"
+                            press=".onPress"
+                        >
+                            <cells>
+                                <Text text="{Iblnr}" />
+                                <Text text="{Zstat}" />
+                                <Text text="{Lgort}" />
+                                <Text
+                                    text="{path:'Gidat',
+                                            formatter: '.formatDate' }"
+                                />
+                                <Text
+                                    text="{path:'Zldat',
+                                            formatter: '.formatDate'}"
+                                />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </smartTable:SmartTable>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>
